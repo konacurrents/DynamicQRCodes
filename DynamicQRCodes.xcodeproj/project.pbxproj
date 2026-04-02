@@ -10,12 +10,16 @@
 		D2A3A38E2F7EE26200FF8E8A /* DynamicQRNodeRed1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DynamicQRNodeRed1.png; sourceTree = "<group>"; };
 		D2A3A38F2F7EE26E00FF8E8A /* flows-2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "flows-2.json"; sourceTree = "<group>"; };
 		D2A3A3902F7EE29000FF8E8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
+		D2A3A3912F7EE45E00FF8E8A /* KSQRCodeCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSQRCodeCreation.h; sourceTree = "<group>"; };
+		D2A3A3932F7EE4A100FF8E8A /* KSQRCodeCreations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSQRCodeCreations.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		D2A3A3822F7EE03F00FF8E8A = {
 			isa = PBXGroup;
 			children = (
+				D2A3A3942F7EE81D00FF8E8A /* WebPages */,
+				D2A3A3922F7EE46500FF8E8A /* AppleApp */,
 				D2A3A3902F7EE29000FF8E8A /* README.md */,
 				D2A3A38D2F7EE04D00FF8E8A /* NodeRed */,
 			);
@@ -28,6 +32,22 @@
 				D2A3A38F2F7EE26E00FF8E8A /* flows-2.json */,
 			);
 			path = NodeRed;
+			sourceTree = "<group>";
+		};
+		D2A3A3922F7EE46500FF8E8A /* AppleApp */ = {
+			isa = PBXGroup;
+			children = (
+				D2A3A3932F7EE4A100FF8E8A /* KSQRCodeCreations.m */,
+				D2A3A3912F7EE45E00FF8E8A /* KSQRCodeCreation.h */,
+			);
+			path = AppleApp;
+			sourceTree = "<group>";
+		};
+		D2A3A3942F7EE81D00FF8E8A /* WebPages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebPages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

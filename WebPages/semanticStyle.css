@@ -1,0 +1,268 @@
+<style>
+
+/* 6.5.23 .. change 'smflowinfo' to 'smart'
+/* this is for h3 in the PDF to create a pagebreak */
+@media print
+{h3 {page-break-before:always}
+}
+
+/* The table with alternating text color */
+.row {
+  display: flex;
+}
+
+.wrapper {
+  display:grid;
+}
+/* Create two equal columns that sits next to each other */
+.column1 {
+  grid-column:1
+  width: 30%;
+  padding: 10px;
+}
+.column2 {
+  grid-column:2
+  width: 40%;
+  padding: 10px;
+}
+
+table.style1 {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/* Style the buttons */
+
+.label {
+  background-color: white;
+  color: black;
+  font-size: 26px;
+
+}
+
+.text {
+  background-color: white;
+  color: black;
+  font-size: 26px;
+
+}
+
+.H1 {
+  background-color: #33FFFF;
+  color: black;
+  font-size: 46px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.H1:hover {
+  background-color: lightblue;
+   font-size: 46px;
+  color: white;
+}
+
+.H1green {
+  background-color: lightgreen;
+  color: black;
+  font-size: 46px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.H1green:hover {
+  background-color: green;
+   font-size: 46px;
+  color: white;
+}
+
+.H2green {
+  background-color: lightgreen;
+  color: black;
+  font-size: 36px;
+
+}
+
+.H2green:hover {
+  background-color: green;
+   font-size: 36px;
+  color: white;
+}
+
+.H2orange {
+  background-color: orange;
+  color: black;
+  font-size: 36px;
+
+}
+
+.H2orange:hover {
+  background-color: red;
+   font-size: 36px;
+  color: white;
+}
+
+.H2 {
+  background-color: lightgrey;
+  color: black;
+  font-size: 36px;
+
+}
+
+.H2:hover {
+  background-color: darkgrey;
+   font-size: 36px;
+  color: white;
+}
+
+.button {
+  background-color: #33FFFF;
+  color: black;
+  font-size: 36px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.button:hover {
+  background-color: lightblue;
+   font-size: 36px;
+  color: white;
+}
+
+.OTHERbutton {
+  background-color: blue;
+  color: white;
+  font-size: 36px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.OTHERbutton:hover {
+  background-color: yellow;
+   font-size: 36px;
+  color: black;
+}
+
+.M5button {
+  background-color: #FF3933;
+  color: white;
+  font-size: 36px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.M5button:hover {
+  background-color: red;
+   font-size: 36px;
+  color: black;
+}
+.HELPButton2 {
+  background-color: lightgreen;
+  color: white;
+  font-size: 26px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.HELPButton2:hover {
+  background-color: green;
+   font-size: 26px;
+  color: white;
+}
+
+.HELPButton {
+  background-color: lightgreen;
+  color: white;
+  font-size: 36px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.HELPButton:hover {
+  background-color: green;
+   font-size: 36px;
+  color: white;
+}
+.OrangeButton {
+  background-color: orange;
+  color: white;
+  font-size: 36px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.OrangeButton:hover {
+  background-color: red;
+   font-size: 36px;
+  color: white;
+}
+
+.buttonX {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btnA {
+background-color: red;
+  color: black;
+  font-size: 42px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+}
+
+.btnA:hover {
+  background-color:  #4CAF50;
+  font-size: 42px;
+  color: white;
+}
+
+.btnA.active {
+  background-color: #666;
+  color: white;
+}
+
+.btnB {
+background-color: lightgreen;
+  color: black;
+  font-size: 42px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+}
+
+.btnB:hover {
+  background-color:  #4CAF50;
+  font-size: 42px;
+  color: white;
+}
+
+.btnB.active {
+  background-color: #666;
+  color: white;
+}
+
+</style>
