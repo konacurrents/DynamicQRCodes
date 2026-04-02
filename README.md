@@ -61,6 +61,37 @@ The list of API calls is shown next with full details later in their appropriate
 > ```
 
 </details>
+### Run a Dynamic QR Code
+
+Redirects to the value specified in the `train` command above.
+
+<details>
+ <summary><code>GET</code> <code><b>/ks/{namespace}/{category}/{UUID}</summary>
+
+##### Parameters
+
+> | name      |  type     | data type               | description                                                           |
+> |-----------|-----------|-------------------------|-----------------------------------------------------------------------|
+> | namespace |  required | string                  | Namespace of Semantic Marker                                          |
+> | category  |  required | string                  | Namespace of Semantic Marker                                          |
+> | UUID      |  required | string                  | UUID of the user                                                      |
+
+
+##### Responses
+
+> | http code     | content-type                      | response                                                            |
+> |---------------|-----------------------------------|---------------------------------------------------------------------|
+> | `201`         | `text/plain;charset=UTF-8`        | `Configuration created successfully`                                |
+> | `400`         | `application/json`                | `{"code":"400","message":"Bad Request"}`                            |
+
+##### Example cURL
+
+> ```javascript
+> set fullsm = "http://localhost:1880/train/ks"
+> curl -v  -F username=$user -F password=$pass -F link=$link -F kind=$kind $fullsm
+> ```
+
+</details>
 
 
 ### Federated Dynamic QR Factories
@@ -79,6 +110,52 @@ node-red.org is used as the backend, and for invoking a QR code.
 The use will have to be familiar with the <a href="node-red.org">node-red</a> system.
 
 <a href="NodeRed/flows-2.json">JSON Flows<a>
+
+### JSON Database
+
+Example of the JSON database for the stored dynamic QR. In each of these there are 2 entries
+to help with the URL query. For example, the `hgWells_0lRVd6" below would equate to:
+   
+```
+yourWeb/hgWells_0lRVd6/TimeTravel/UUID
+
+```
+
+```json
+{
+  "wgVmJa": {
+    "mapping": "https://appleprivacyletter.com"
+  },
+  "AppkeBad_wgVmJa": {
+    "category": "YourCategory",
+    "mapping": "https://appleprivacyletter.com"
+  },
+  "0lRVd6": {
+    "mapping": "https://en.m.wikipedia.org/wiki/H._G._Wells"
+  },
+  "hgWells_0lRVd6": {
+    "category": "TimeTravel",
+    "mapping": "https://en.m.wikipedia.org/wiki/H._G._Wells"
+  },
+  "BDnRcw": {
+    "mapping": "https://en.m.wikipedia.org/wiki/Flatland"
+  },
+  "NameSpace_BDnRcw_BDnRcw": {
+    "category": "YourCategory",
+    "mapping": "https://en.m.wikipedia.org/wiki/Flatland"
+  },
+  "jzlZYf": {
+    "mapping": "https://www.instagram.com/p/CTQcb2gPozQ/?utm_medium=copy_link"
+  },
+  "balloon_jzlZYf": {
+    "category": "YourCategory",
+    "mapping": "https://www.instagram.com/p/CTQcb2gPozQ/?utm_medium=copy_link"
+  ,
+  "ojLF4W": {
+    "mapping": "https://www.instagram.com/p/CTQ9TZEMGtO/?utm_medium=copy_link"
+  }
+}
+```
 
 ## Web Pagees
 
