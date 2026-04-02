@@ -19,6 +19,8 @@ can also be run locally or moved to other web servers. For the Semantic Marker&r
 by outside parties, the Semantic Marker&reg;   address URL must be publically available 
 (for example, **https://SemanticMarker.org** is globally accessible, while **http://localhost** would only be available for local use - such as a dog kennel operation.) 
 
+When node-red starts up, if running locally, it will have the localhost address and the port (eg. localhost:1888).
+
 
 The list of API calls is shown next with full details later in their appropriate sections. 
 
@@ -89,7 +91,7 @@ The list of API calls is shown next with full details later in their appropriate
 ##### Example cURL
 
 > ```javascript
-> set fullsm = "http://localhost:1880/train/ks"
+> set fullsm = "http://localhost:1880/ks"
 > curl -v  -F username=$user -F password=$pass -F link=$link -F kind=$kind $fullsm
 > ```
 
@@ -169,5 +171,5 @@ in the apple app does this interfacing.
 
 A portion of a Apple iOS App that I have been using for 5+ years (2021). 
 
-<a href="AppleApp/KSQRCodeCreations.h">Apple App</a>
+<a href="AppleApp">Apple App</a>
 
