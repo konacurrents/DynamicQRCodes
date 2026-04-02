@@ -119,10 +119,12 @@ The use will have to be familiar with the <a href="node-red.org">node-red</a> sy
 ### JSON Database
 
 Example of the JSON database for the stored dynamic QR. In each of these there are 2 entries
-to help with the URL query. For example, the `hgWells_0lRVd6" below would equate to:
+to help with the URL query. For example, the `hgWells_0lRVd6" below would equate to the following,
+modeled after the URL shown above under `Run a Semantic Marker`.
+
    
 ```
-yourWeb/hgWells_0lRVd6/TimeTravel/UUID
+yourWeb/ks/hgWells_0lRVd6/TimeTravel/UUID
 
 ```
 
