@@ -11,7 +11,7 @@
 		D2A3A38F2F7EE26E00FF8E8A /* flows-2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "flows-2.json"; sourceTree = "<group>"; };
 		D2A3A3902F7EE29000FF8E8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 		D2A3A3912F7EE45E00FF8E8A /* KSQRCodeCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSQRCodeCreation.h; sourceTree = "<group>"; };
-		D2A3A3932F7EE4A100FF8E8A /* KSQRCodeCreations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSQRCodeCreations.m; sourceTree = "<group>"; };
+		D2A3A3932F7EE4A100FF8E8A /* KSQRCodeCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSQRCodeCreation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -37,7 +37,7 @@
 		D2A3A3922F7EE46500FF8E8A /* AppleApp */ = {
 			isa = PBXGroup;
 			children = (
-				D2A3A3932F7EE4A100FF8E8A /* KSQRCodeCreations.m */,
+				D2A3A3932F7EE4A100FF8E8A /* KSQRCodeCreation.m */,
 				D2A3A3912F7EE45E00FF8E8A /* KSQRCodeCreation.h */,
 			);
 			path = AppleApp;
