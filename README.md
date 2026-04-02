@@ -66,10 +66,9 @@ The list of API calls is shown next with full details later in their appropriate
 
 ### Run a Dynamic QR Code
 
-Redirects to the value specified in the `train` command above.
 
 <details>
- <summary><code>GET</code> <code><b>/ks/{namespace}/{category}/{UUID}</summary>
+ <summary><code>GET</code> <code><b>/ks/{namespace}/{category}/{UUID}</b></code></summary>
 
 ##### Parameters
 
@@ -96,6 +95,7 @@ Redirects to the value specified in the `train` command above.
 
 </details>
 
+Redirects to the value specified in the `train` command above.
 
 ### Federated Dynamic QR Factories
 
