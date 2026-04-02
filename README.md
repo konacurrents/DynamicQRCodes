@@ -30,9 +30,11 @@ The list of API calls is shown next with full details later in their appropriate
 > | /exists/ks | query if Semantic Marker&reg; exists |{category}/{namespace} /{UUID}/{escapedSemanticMarker} | GET  |
 > | /train/ks | train a Semantic Marker&reg; |{namespace}/{category} /{UUID}/{escapedSemanticMarker} | GET |
 > | /lookup/ks | train a Semantic Marker&reg; |{namespace}/{category} /{UUID}/{escapedSemanticMarker} | GET |
+> | /ks | run a Semantic Marker&reg; |{namespace}/{category} /{UUID} | GET |
 </details>
 
 ### Train a semantic marker
+
 <details>
  <summary><code>GET</code> <code><b>/train/ks/{namespace}/{category}/{UUID}/{escapedSemanticMarker}</b></code></summary>
 
@@ -61,6 +63,7 @@ The list of API calls is shown next with full details later in their appropriate
 > ```
 
 </details>
+
 ### Run a Dynamic QR Code
 
 Redirects to the value specified in the `train` command above.
