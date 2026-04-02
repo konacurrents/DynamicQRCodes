@@ -1,0 +1,822 @@
+[
+    {
+        "id": "a20f75b5.c3b3",
+        "type": "tab",
+        "label": "QR Training",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7cf7bb60.0f3e74",
+        "type": "inject",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 80,
+        "y": 100,
+        "wires": [
+            [
+                "2c8829b9.c70516"
+            ]
+        ]
+    },
+    {
+        "id": "2c8829b9.c70516",
+        "type": "file in",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "filename": "/home/ec2-user/.node-red/data/namespace.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 230,
+        "y": 40,
+        "wires": [
+            [
+                "951924c.19fcb58"
+            ]
+        ]
+    },
+    {
+        "id": "a7f56a77.88ccb8",
+        "type": "debug",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "951924c.19fcb58",
+        "type": "json",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "pretty": false,
+        "x": 250,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "befc94f3.ff2d88",
+        "type": "debug",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "complete": "payload",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "25728e0c.61375a",
+        "type": "DataOut",
+        "z": "a20f75b5.c3b3",
+        "collection": "cd4f1d3c.61cc1",
+        "name": "test.json",
+        "path": "/",
+        "error": true,
+        "x": 440,
+        "y": 540,
+        "wires": [
+            [
+                "befc94f3.ff2d88",
+                "80a93fc0.1823"
+            ]
+        ]
+    },
+    {
+        "id": "d8edafec.6455b",
+        "type": "change",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "datapath",
+                "pt": "msg",
+                "to": "/myRootTest/currentTime",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 540,
+        "wires": [
+            [
+                "25728e0c.61375a"
+            ]
+        ]
+    },
+    {
+        "id": "b81a607d.caf518",
+        "type": "inject",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "topic": "",
+        "payload": "test",
+        "payloadType": "str",
+        "x": 133,
+        "y": 481,
+        "wires": [
+            [
+                "d8edafec.6455b"
+            ]
+        ]
+    },
+    {
+        "id": "6b641495.ea315c",
+        "type": "inject",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "topic": "",
+        "payload": "https://KnowledgeShark.me/red/scoyyt",
+        "payloadType": "str",
+        "x": 93,
+        "y": 314,
+        "wires": [
+            [
+                "163a4a81.29b4c5"
+            ]
+        ]
+    },
+    {
+        "id": "163a4a81.29b4c5",
+        "type": "change",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "datapath",
+                "pt": "msg",
+                "to": "/NameSpace_e/mapping",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 340,
+        "wires": [
+            [
+                "40fb05a0.b7b7ac"
+            ]
+        ]
+    },
+    {
+        "id": "40fb05a0.b7b7ac",
+        "type": "DataIn",
+        "z": "a20f75b5.c3b3",
+        "collection": "cd4f1d3c.61cc1",
+        "name": "test.json",
+        "update": false,
+        "path": "/",
+        "x": 680,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ec023aca.6d0a1",
+        "type": "comment",
+        "z": "a20f75b5.c3b3",
+        "name": "Help Set Data",
+        "info": "Push to set the /myRootTest/currentTime as the current time in the collection Test",
+        "x": 90,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "fa8f3842.b4be3",
+        "type": "comment",
+        "z": "a20f75b5.c3b3",
+        "name": "Help Get Data",
+        "info": "Push to get the /myRootTest/currentTime a from the collection Test.\nThat time has been set by the set data.",
+        "x": 112,
+        "y": 444,
+        "wires": []
+    },
+    {
+        "id": "127b97a6.a39958",
+        "type": "change",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "datapath",
+                "pt": "msg",
+                "to": "/scotty/mapping",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 620,
+        "wires": [
+            [
+                "25728e0c.61375a"
+            ]
+        ]
+    },
+    {
+        "id": "f1d3f89e.d4e648",
+        "type": "inject",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "topic": "",
+        "payload": "test",
+        "payloadType": "str",
+        "x": 90,
+        "y": 600,
+        "wires": [
+            [
+                "127b97a6.a39958"
+            ]
+        ]
+    },
+    {
+        "id": "cea4167f.d652b8",
+        "type": "link in",
+        "z": "a20f75b5.c3b3",
+        "name": "qrloookup2",
+        "links": [
+            "6218df22.e04a5"
+        ],
+        "x": 355,
+        "y": 380,
+        "wires": [
+            [
+                "6a740195.e92b18",
+                "befc94f3.ff2d88",
+                "f7fa5edd.c2ef78"
+            ]
+        ]
+    },
+    {
+        "id": "87f5358.8af71c8",
+        "type": "debug",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "6a740195.e92b18",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "lookup qr",
+        "func": "var object ={};\n\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\nvar o_cat  = msg.req.params.CATEGORY;\no_cat = o_cat.toLowerCase();\nconsole.log(\"cat=\" + o_cat + \" uuid=\" + o_uuid + \" name=\" + o_name); \nmsg.datapath = \"/\" + o_name + \"_\" + o_uuid + \"/mapping\";\nconsole.log(msg.datapath); \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 460,
+        "wires": [
+            [
+                "25728e0c.61375a"
+            ]
+        ]
+    },
+    {
+        "id": "7513ca15.2ef504",
+        "type": "http response",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 670,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "80a93fc0.1823",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "build web page",
+        "func": "var webpage = msg.payload;\nif (msg.error)\n{\n    webpage = \n    \"https://KnowledgeShark.me/images/UnknownQRCode.jpeg\";\n}\nif (webpage)\n{\n    //return on 2nd output\n    //msg.url = webpage;\n    msg.payload = webpage;\n    //return [null,msg];\n    msg.headers = {\n       \"Content-Type\":\"text/html\",\n       \"Location\": webpage\n    };\n    msg.statusCode = 307;\n    msg.url = webpage;\n\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 600,
+        "y": 600,
+        "wires": [
+            [
+                "7513ca15.2ef504"
+            ]
+        ]
+    },
+    {
+        "id": "403f408e.920aa",
+        "type": "http in",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "url": "/train/ks/:CATEGORY/:NAME/:UUID/:MAPPING",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "c02bf636.36b2d8",
+                "3ca5edb1.3920f2",
+                "42eb8dd2.7eab5c",
+                "757c6d95.08853c"
+            ]
+        ]
+    },
+    {
+        "id": "42eb8dd2.7eab5c",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "JSON name_uuid.mapping",
+        "func": "var object ={};\n//see https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_replace2\nvar o_cat = msg.req.params.CATEGORY;\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\nvar o_mapping  = msg.req.params.MAPPING;\n//o_cat = o_cat.toLowerCase();\n// until can get escapes or something working..\n// might have to be special characters, that are replaced..\n//Special Character: |  ==> |\n\no_mapping = o_mapping.replace(/\\|/g,\"/\");\nmsg.payload=  o_mapping;\nconsole.log(\"Payload = \" + o_mapping);\nmsg.datapath = \"/\" + o_name + \"_\" + o_uuid + \"/mapping\";\nconsole.log(\"Datapath=\" + msg.datapath);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "40fb05a0.b7b7ac"
+            ]
+        ]
+    },
+    {
+        "id": "cef9392e.497108",
+        "type": "template",
+        "z": "a20f75b5.c3b3",
+        "name": "return web page",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<html>\n    <head></head>\n    <body>\n        <h1>Training QRAvatar Successful</h1>\n<h2>{{payload}}</h2>\n\nsee <a href=\"https://QRAvatar.me\">QRAvatar.me</a>\n    </body>\n</html>",
+        "output": "str",
+        "x": 560,
+        "y": 160,
+        "wires": [
+            [
+                "87f5358.8af71c8",
+                "f12d8f23.ac20d8"
+            ]
+        ]
+    },
+    {
+        "id": "898c684d.8b16f",
+        "type": "comment",
+        "z": "a20f75b5.c3b3",
+        "name": "3 parms parsed",
+        "info": "",
+        "x": 120,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f12d8f23.ac20d8",
+        "type": "http response",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 690,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c02bf636.36b2d8",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "JSON uuid.mapping",
+        "func": "var object ={};\n//see https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_replace2\nvar o_cat = msg.req.params.CATEGORY;\n\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\nvar o_mapping  = msg.req.params.MAPPING;\n//o_cat = o_cat.toLowerCase();\n// until can get escapes or something working..\n// might have to be special characters, that are replaced..\n//Special Character: |  ==> |\n\no_mapping = o_mapping.replace(/\\|/g,\"/\");\nmsg.payload=  o_mapping;\nconsole.log(o_mapping);\n//sets:  /<uuid>.mapping \nmsg.datapath = \"/\" + o_uuid + \"/mapping\";\nconsole.log(msg.datapath);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "40fb05a0.b7b7ac"
+            ]
+        ]
+    },
+    {
+        "id": "3ca5edb1.3920f2",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "JSON name_uuid.category -> category",
+        "func": "var object ={};\n//see https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_replace2\nvar o_cat = msg.req.params.CATEGORY;\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\nvar o_mapping  = msg.req.params.MAPPING;\n//o_cat = o_cat.toLowerCase();\n// until can get escapes or something working..\n// might have to be special characters, that are replaced..\n//Special Character: |  ==> |\n\no_mapping = o_mapping.replace(/\\|/g,\"/\");\nmsg.payload=  o_mapping;\nconsole.log(o_mapping);\n\nmsg.payload=  o_cat;\nconsole.log(o_cat);\nmsg.datapath = \"/\" + o_name + \"_\" + o_uuid + \"/category\";\nconsole.log(msg.datapath);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 420,
+        "y": 300,
+        "wires": [
+            [
+                "40fb05a0.b7b7ac"
+            ]
+        ]
+    },
+    {
+        "id": "757c6d95.08853c",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "Send #trainMe on message bus",
+        "func": "var object ={};\n//see https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_replace2\nvar o_cat = msg.req.params.CATEGORY;\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\nvar o_mapping  = msg.req.params.MAPPING;\n//o_cat = o_cat.toLowerCase();\n// until can get escapes or something working..\n// might have to be special characters, that are replaced..\n//Special Character: |  ==> |\no_mapping = o_mapping.replace(/\\|/g,\"/\");\nvar web = \"https://KnowledgeShark.me/red/ks\";\n//! send a JSON like message:\nvar message = \"#trainMe {\" + web + \"/\" + o_cat + \"/\" + o_name + \"/\" + o_uuid + \", \" + o_mapping + \"}\";\nmsg.payload= message;\nconsole.log(message);\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "a7f56a77.88ccb8",
+                "cef9392e.497108",
+                "aaee0495.7b56a8"
+            ]
+        ]
+    },
+    {
+        "id": "aaee0495.7b56a8",
+        "type": "mqtt out",
+        "z": "a20f75b5.c3b3",
+        "d": true,
+        "name": "",
+        "topic": "idogwatch/bark",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "785307c6.89e0f8",
+        "x": 480,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8e9a9eab.5d4378",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "LEGACY KS Lookup UUID to Image",
+        "func": "var object ={};\n\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\nvar o_cat  = msg.req.params.CATEGORY;\no_cat = o_cat.toLowerCase();\nconsole.log(\"cat=\" + o_cat + \" uuid=\" + o_uuid + \" name=\" + o_name); \nvar webpage = null;\n\nvar foundLegacy = true;\n\nif (o_cat == \"jitl.kshark\")\n{\n     object = \"https://knowledgeshark.me/images/NDAImages/JITL/JITL.html\";\n     webpage = object;\n     object = null;\n}\nelse if (o_cat == \"book\")\n{\n    object = \"https://knowledgeshark.me/images/KnowledgeShark2021_clear2.png\";\n    webpage = object;\n     //object = null;\n}\nelse if (o_cat == \"genre\")\n{\n     object = \"https://knowledgeshark.me/images/Genres/genres.jpg\";\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"genre.kshark\")\n{\n     object = \"https://knowledgeshark.me/images/NDAImages/Genre/fiveSystems.html\";\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"matrix.kshark\")\n{\n     object = \"https://knowledgeshark.me/matrix.html\";\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"elevator.kshark\")\n{\n     object = \"https://knowledgeshark.me/images/NDAImages/Genre/fiveSystems.html\";\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"story.kshark\")\n{\n     object = \"https://knowledgeshark.me/images/NDAImages/Genre/fiveSystems.html\";\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"deathstar.kshark\")\n{\n     object = \"https://knowledgeshark.me/images/NDAImages/Genre/fiveSystems.html\";\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"iceberg.kshark\")\n{\n     object = \"https://knowledgeshark.me/images/NDAImages/Genre/fiveSystems.html\";\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"labyrinth.kshark\")\n{\n     object = \"https://knowledgeshark.me/images/labyrinth.html\";\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"knowledgeshark.me\")\n{\n     //object = \"https://knowledgeshark.me/arch.html\";\n     object = \"https://knowledgeshark.me\";\n     webpage = object;\n     object = null;\n\n}\nelse if (o_cat == \"neutra\")\n{\n     object = \"https://NeutraKuhns.com\";\n     webpage = object;\n     object = null;\n\n}\nelse if (o_cat == \"howie.idogwatch\")\n     object = \"https://knowledgeshark.me/images/IMG_9677.jpg\";\nelse if (o_cat == \"concurrency\") //1\n     object = \"https://knowledgeshark.me/images/NDAImages/View1.jpg\";\nelse if (o_cat == \"discovery\")   //2\n     object = \"https://knowledgeshark.me/images/NDAImages/View2.jpg\";\nelse if (o_cat == \"binding\") //3\n     object = \"https://knowledgeshark.me/images/NDAImages/View3.jpg\";\nelse if (o_cat == \"protocols\") //4\n     object = \"https://knowledgeshark.me/images/NDAImages/View4.jpg\";\nelse if (o_cat == \"routing\") //5\n     object = \"https://knowledgeshark.me/images/NDAImages/View5.jpg\";\nelse if (o_cat == \"dissemination\") //6\n     object = \"https://knowledgeshark.me/images/NDAImages/View6.jpg\";\nelse if (o_cat == \"operations\") //7\n     object = \"https://knowledgeshark.me/images/NDAImages/View7.jpg\";\nelse if (o_cat == \"language\") //a\n     object = \"https://knowledgeshark.me/images/NDAImages/PerspectiveA.jpg\";\nelse if (o_cat == \"performance\") //b\n     object = \"https://knowledgeshark.me/images/NDAImages/PerspectiveB.jpg\";\nelse if (o_cat == \"security\") //c\n     object = \"https://knowledgeshark.me/images/NDAImages/PerspectiveC.jpg\";\nelse if (o_cat == \"maintenance\")//d\n     object = \"https://knowledgeshark.me/images/NDAImages/PerspectiveD.jpg\";\nelse if (o_cat == \"accessability\") //e\n     object = \"https://knowledgeshark.me/images/NDAImages/PerspectiveE.jpg\";\n//6.13.2020\nelse if (o_cat == \"iDogWatch\" || o_cat == \"idogwatch\")\n{\n     if (o_name == \"howie\")\n     {\n      // object = \"https://www.whiteriverranch.com/MakeGr8Pets/IDogWatch/i-LbrT6Kp/A\";\n       object = \"https://KnowledgeShark.me/TrainingRoster/TrainingRoster.howie.jpeg\";\n\n     }\n     else if (o_name == \"frankie\")\n     {\n          //  object = \"https://www.whiteriverranch.com/MakeGr8Pets/IDogWatch/i-DLWBqMJ/A\";\n            object = \"https://KnowledgeShark.me/TrainingRoster/TrainingRoster.frankie.jpeg\";\n}\n     else if (o_name == \"sunny\")\n     {\n           // object = \"https://www.whiteriverranch.com/MakeGr8Pets/IDogWatch/i-VN8FwHs/A\";\n\n            object = \"https://KnowledgeShark.me/TrainingRoster/TrainingRoster.sunny.jpeg\";\n}\n     else if (o_name == \"lacie\")\n     {\n         //object = \"https://www.whiteriverranch.com/MakeGr8Pets/IDogWatch/i-MSx65dv/A\";\n\n            object = \"https://KnowledgeShark.me/TrainingRoster/TrainingRoster.lacie.jpeg\";\n}\n     else if (o_name == \"scooby\")\n     {\n         object = \"https://www.whiteriverranch.com/MakeGr8Pets/IDogWatch/i-ndGpsJK/A\";\n\n           //TEMP: have it feed... object = \"https://KnowledgeShark.me/TrainingRoster/TrainingRoster.scooby.jpeg\";\n     \n         object = \"http://konacurrents.com:1880/feed/FromQRCode\";\n     \n     }\n     else if (o_name == \"maggie\")\n     {\n          //object = \"https://www.whiteriverranch.com/MakeGr8Pets/IDogWatch/i-zhqmkLX/A\";\n          object = \"https://KnowledgeShark.me/TrainingRoster/TrainingRoster.maggie.jpeg\";\n     }\n     \n     else\n     {\n        object = \"https://knowledgeShark.me\";\n     }\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"august\")\n{\n     object = \"https://knowledgeshark.me/images/AugustMakana.jpg\";\n     webpage = object;\n     object = null;\n    \n}\nelse if (o_cat == \"biking\" || o_cat.includes(\"biking\") )\n{\n    //supporting biking | biking.<n>\n    object = \"https://www.whiteriverranch.com/Sports/Biking/BestofPlateauBikers\";\n    \n    webpage = object;\n    object = null;\n    \n    if (o_cat == \"biking.da3\")\n    {\n        //supporting biking | biking.<n>\n        object = \"https://www.whiteriverranch.com/Sports/Biking/BestofPlateauBikers\";\n    }\n    else if (o_cat == \"biking.groupMud\")\n    {\n        //supporting biking | biking.<n>\n        object = \"https://www.whiteriverranch.com/Sports/Biking/BestofPlateauBikers\";\n    }\n    else if (o_cat == \"biking.bobsam\")\n    {\n        //supporting biking | biking.<n>\n        object = \"https://www.whiteriverranch.com/Sports/Biking/BestofPlateauBikers\";\n    }\n    else if (o_cat == \"biking.jeffjohn\")\n    {\n        //supporting biking | biking.<n>\n        object = \"https://www.whiteriverranch.com/Sports/Biking/BestofPlateauBikers\";\n    }\n    else if (o_cat == \"biking.lauraolga\")\n    {\n        //supporting biking | biking.<n>\n        object = \"https://www.whiteriverranch.com/Sports/Biking/BestofPlateauBikers\";\n    }\n    else if (o_cat == \"biking.rainier\")\n    {\n        //supporting biking | biking.<n>\n        object = \"https://www.whiteriverranch.com/Sports/Biking/BestofPlateauBikers\";\n    }\n    else if (o_cat == \"biking.baloon\") //even mispelled\n    {\n        //supporting biking | biking.<n>\n        object = \"https://www.whiteriverranch.com/Sports/Biking/BestofPlateauBikers\";\n    }\n    \n    \n    webpage = object;\n    object = null;\n}\nelse if (o_cat == \"qravatar\")\n{\n    // kd/qravatar/NAME\n    if (o_name == \"Music\")\n    {\n        // Invoke the Display the wave using too.. message\n        \n    }\n    if (o_name == \"ifLaura\")\n    {\n        // Invoke the Display the wave using too.. message\n        object = \"https://KnowledgeShark.me/ifLaura\";\n        webpage = object;\n        object = null;\n        \n    }\n    else if (o_name == \"KnowledgeShark\")\n    {\n        // Invoke the Display the wave using too.. message\n        object = \"https://KnowledgeShark.me\";\n        webpage = object;\n        object = null;\n        \n    }\n    else\n    {\n     object = \"https://KnowledgeShark.me/QRAvatar/QRInvokeWave.html\" + \"?name=\" + o_name;\n     webpage = object;\n     object = null;\n    }\n}\nelse\n{\n    foundLegacy = false;\n    \n    /*\n   object = \"https://knowledgeshark.me/images/UnknownQRCode.jpeg\";//NOT found\";\n   */\n   webpage = null;\n   object = null;\n   \n}\n\n//If webpage == null, then the result is an Image..\nconsole.log(\"o_cat=\" + o_cat);\nconsole.log(\"o_name=\" + o_name);\nconsole.log(\"webpage=\" + webpage);\nconsole.log(\"URL=\" + webpage);\nconsole.log(\"object=\" + object);\nif (foundLegacy)\n{\n    console.log(\"Legacy = TRUE\");\nmsg.payload = object;\nmsg.url = object;\n\nif (webpage)\n{\n    //return on 2nd output\n    //msg.url = webpage;\n    msg.payload = webpage;\n    //return [null,msg];\n    msg.headers = {\n       \"Content-Type\":\"text/html\",\n       \"Location\": webpage\n    };\n    msg.statusCode = 307;\n    msg.url = webpage;\n\n    return [null,msg,null];\n}\nelse\n{\n    console.log(\"returning a binary image\");\n    //return on 1st output, which will be a binary image..\n   return [msg, null,null];\n}\n}\nelse\n   return [null,null,msg.payload]\n",
+        "outputs": 3,
+        "noerr": 0,
+        "x": 250,
+        "y": 660,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f7fa5edd.c2ef78",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "Send #followLinkMe on message bus",
+        "func": "var object ={};\n//see https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_replace2\nvar o_cat = msg.req.params.CATEGORY;\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\n//o_cat = o_cat.toLowerCase();\n// until can get escapes or something working..\n// might have to be special characters, that are replaced..\n//Special Character: |  ==> |\nvar web = \"https://KnowledgeShark.me/red/ks\";\n//! send a JSON like message:\nvar message = \"#followLinkMe {\" + web + \"/\" + o_cat + \"/\" + o_name + \"/\" + o_uuid + \"}\";\nmsg.payload= message;\nconsole.log(message);\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 630,
+        "y": 420,
+        "wires": [
+            [
+                "aaee0495.7b56a8",
+                "befc94f3.ff2d88"
+            ]
+        ]
+    },
+    {
+        "id": "3cd10bf4.b2d69c",
+        "type": "http in",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "url": "/exists/ks/:CATEGORY/:NAME/:UUID",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 800,
+        "y": 300,
+        "wires": [
+            [
+                "b77ab146.1e1ee"
+            ]
+        ]
+    },
+    {
+        "id": "b77ab146.1e1ee",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "lookup QR if exists or not",
+        "func": "var object ={};\n\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\nvar o_cat  = msg.req.params.CATEGORY;\no_cat = o_cat.toLowerCase();\nconsole.log(\"cat=\" + o_cat + \" uuid=\" + o_uuid + \" name=\" + o_name); \nmsg.datapath = \"/\" + o_name + \"_\" + o_uuid + \"/mapping\";\nconsole.log(msg.datapath); \nconsole.log(\"looking to see if QR exists\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 360,
+        "wires": [
+            [
+                "c2c9990f.6ee8b8"
+            ]
+        ]
+    },
+    {
+        "id": "c2c9990f.6ee8b8",
+        "type": "DataOut",
+        "z": "a20f75b5.c3b3",
+        "collection": "cd4f1d3c.61cc1",
+        "name": "test.json",
+        "path": "/",
+        "error": true,
+        "x": 930,
+        "y": 420,
+        "wires": [
+            [
+                "b8d1bac8.c7e31"
+            ]
+        ]
+    },
+    {
+        "id": "b8d1bac8.c7e31",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "Build web page for whether it exists",
+        "func": "var webpage = msg.payload;\nif (msg.error)\n{\n    //doesn't exist\n    webpage = \n    \"https://KnowledgeShark.me/images/UnknownQRCode.jpeg\";\n}\nelse\n{\n  //DOES exist, return QRExists.html with\n    webpage = \n    \"https://KnowledgeShark.me/images/QRExists.jpeg\";\n  \n}\nif (webpage)\n{\n    //return on 2nd output\n    //msg.url = webpage;\n    msg.payload = webpage;\n    //return [null,msg];\n    msg.headers = {\n       \"Content-Type\":\"text/html\",\n       \"Location\": webpage\n    };\n    msg.statusCode = 307;\n    msg.url = webpage;\n\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 480,
+        "wires": [
+            [
+                "7d8c3f05.c6e1b"
+            ]
+        ]
+    },
+    {
+        "id": "7d8c3f05.c6e1b",
+        "type": "http response",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 960,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "881cbd61.e64fe8",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "JSON name_uuid.category -> get countr",
+        "func": "var object ={};\n//see https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_replace2\nvar o_cat = msg.req.params.CATEGORY;\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\n//o_cat = o_cat.toLowerCase();\n// until can get escapes or something working..\n// might have to be special characters, that are replaced..\n//Special Character: |  ==> |\n\n//set or retrive /<o_name>_<o_uuid>_<count>\n\nmsg.datapath = \"/\" + o_name + \"_\" + o_uuid + \"_count\";\nconsole.log(msg.datapath);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 680,
+        "wires": [
+            [
+                "e1e4cc5b.8283d"
+            ]
+        ]
+    },
+    {
+        "id": "e1e4cc5b.8283d",
+        "type": "DataOut",
+        "z": "a20f75b5.c3b3",
+        "collection": "cd4f1d3c.61cc1",
+        "name": "test.json",
+        "path": "/",
+        "error": false,
+        "x": 740,
+        "y": 720,
+        "wires": [
+            [
+                "cc0895f3.30cef"
+            ]
+        ]
+    },
+    {
+        "id": "cc0895f3.30cef",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "Increment count",
+        "func": "var object ={};\nvar count = msg.payload;\nif (msg.error)\n{\n    console.log(\"New Countr\");\n    count = 0;\n}\n\ncount++;\n\nconsole.log(\"New countr \" + count);\n\n//see https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_replace2\nvar o_cat = msg.req.params.CATEGORY;\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\n//o_cat = o_cat.toLowerCase();\n// until can get escapes or something working..\n// might have to be special characters, that are replaced..\n//Special Character: |  ==> |\n\n//set or retrive /<o_name>_<o_uuid>_<count>\n\nmsg.datapath = \"/\" + o_name + \"_\" + o_uuid + \"_count\";\nconsole.log(msg.datapath);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 780,
+        "wires": [
+            [
+                "4dbf3518.9927ac"
+            ]
+        ]
+    },
+    {
+        "id": "4dbf3518.9927ac",
+        "type": "DataIn",
+        "z": "a20f75b5.c3b3",
+        "collection": "cd4f1d3c.61cc1",
+        "name": "test.json",
+        "update": false,
+        "path": "/",
+        "x": 970,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "a75dceaa3968cd8b",
+        "type": "DataOut",
+        "z": "a20f75b5.c3b3",
+        "collection": "cd4f1d3c.61cc1",
+        "name": "test.json",
+        "path": "/",
+        "error": true,
+        "x": 920,
+        "y": 180,
+        "wires": [
+            [
+                "c54a3d23adcf144b"
+            ]
+        ]
+    },
+    {
+        "id": "bc90f3b70090e8c4",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "lookup QR if exists or not.2",
+        "func": "var object ={};\n\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\nvar o_cat  = msg.req.params.CATEGORY;\no_cat = o_cat.toLowerCase();\nconsole.log(\"cat=\" + o_cat + \" uuid=\" + o_uuid + \" name=\" + o_name); \n//create the database lookup \"/name_uuid/mapping\"\nmsg.datapath = \"/\" + o_name + \"_\" + o_uuid + \"/mapping\";\nconsole.log(msg.datapath); \nconsole.log(\"looking to see if QR exists\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 120,
+        "wires": [
+            [
+                "a75dceaa3968cd8b"
+            ]
+        ]
+    },
+    {
+        "id": "c54a3d23adcf144b",
+        "type": "function",
+        "z": "a20f75b5.c3b3",
+        "name": "Build Web Page for Lookup",
+        "func": "\n//The msg.payload == Action (web access after lookup)\nvar webpageAction = msg.payload;\nif (msg.error)\n{\n    //doesn't exist\n    webpageAction = \"UNKNOWN SemanticMarker\";\n}\n\n  \n\n//var object ={};\n\nvar o_uuid = msg.req.params.UUID;\nvar o_name = msg.req.params.NAME;\nvar o_cat  = msg.req.params.CATEGORY;\n\n//NOTE: This page is here since the lookup needs to occur...\n//BUT How to let the caller on \"/exists\" get this info... or is this a JSON reply?\n// eg. {category=c ...} so the caller can parse this???\n\n//perform lookup (TODO)  - the Action of SemanticMarker\n//var webAddress = \"https://KnowledgeShark.me\";\n\n\n//o_cat = o_cat.toLowerCase();\n//console.log(\"cat=\" + o_cat + \" uuid=\" + o_uuid + \" name=\" + o_name); \n//var webpage = \"<h1>\" + o_uuid + \"</h1>\" + \"<a href='\" + webAddress + \"'>\" + webAddress + \"</a>\";\n\n\n//If webpage == null, then the result is an Image..\nconsole.log(\"CAT =\" + o_cat);\nconsole.log(\"NAME=\" + o_name);\nconsole.log(\"UUID=\" + o_uuid);\n\nconsole.log(\"Action=\" + webpageAction);\n//console.log(\"URL=\" + webpage);\n//console.log(\"object=\" + object);\n\n//msg.payload = object;\nmsg.action = webpageAction; //the SemanticMarker's action\nmsg.category = o_cat;\nmsg.name = o_name;\nmsg.uuid = o_uuid;\n\n\nmsg.fullkey = \"https://SemanticMarkers.org/veritas/ks/\" + o_cat + \"/\" + o_name + \"/\" + o_uuid;\n\nmsg.jsonformat = \"{\"\n+ \"\\\"category\\\":\\\"\" + o_cat + \"\\\",\"\n+ \"\\\"name\\\":\\\"\" + o_name + \"\\\",\"\n+ \"\\\"uuid\\\":\\\"\" + o_uuid + \"\\\",\"\n+ \"\\\"fullKey\\\":\\\"\" + msg.fullKey + \"\\\",\"\n+ \"\\\"action\\\":\\\"\" + webpageAction + \"\\\"}\";\n\n\n// console.log(\"MSG PAYLOAD = \");\n// console.log(msg);\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 220,
+        "wires": [
+            [
+                "0bdc374f906080a6"
+            ]
+        ]
+    },
+    {
+        "id": "b19194925230e9ae",
+        "type": "http in",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "url": "/lookup/ks/:CATEGORY/:NAME/:UUID",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 900,
+        "y": 60,
+        "wires": [
+            [
+                "bc90f3b70090e8c4"
+            ]
+        ]
+    },
+    {
+        "id": "209f4fd06c7535ff",
+        "type": "http response",
+        "z": "a20f75b5.c3b3",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1090,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "0bdc374f906080a6",
+        "type": "template",
+        "z": "a20f75b5.c3b3",
+        "name": "HTML output",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<html>\n    <head>\n        <title>SemanticMarkers.org Lookup</title>\n    </head>\n    <body>\n        <img src=\"https://SemanticMarkers.com/SemanticMarkers.png\">\n        <h1>SemanicMarker key</h1>\n        <ul>\n            <li>Category = {{category}}</li>\n            <li>Name = {{name}}</li>\n            <li>UUID = {{uuid}}</li>\n<li>SemanticMarker Key = <a href=\"{{fullkey}}\">{{fullkey}}</a></li>\n            </ul>\n            <h1>SemanicMarker action</h1>\n            <ul>\n            <li>SemanticMarker Action = <a href=\"{{action}}\">{{action}}</a>\n              </ul>\n              \n            <h2>Data</h2>\n            JSON = {{jsonformat}} \n\n  </ul>\n\n    </body>\n\n</html>",
+        "output": "str",
+        "x": 1150,
+        "y": 220,
+        "wires": [
+            [
+                "209f4fd06c7535ff"
+            ]
+        ]
+    },
+    {
+        "id": "cd4f1d3c.61cc1",
+        "type": "json-db-collection",
+        "z": "a20f75b5.c3b3",
+        "name": "Test",
+        "collection": "test",
+        "save": true
+    },
+    {
+        "id": "785307c6.89e0f8",
+        "type": "mqtt-broker",
+        "d": true,
+        "name": "",
+        "broker": "idogwatch.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1ab0da13d8a4d72f",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "json-db-node-red": "0.5.3"
+        }
+    }
+]
