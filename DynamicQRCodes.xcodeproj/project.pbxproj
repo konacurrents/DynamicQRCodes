@@ -12,6 +12,8 @@
 		D2A3A3902F7EE29000FF8E8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 		D2A3A3912F7EE45E00FF8E8A /* KSQRCodeCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSQRCodeCreation.h; sourceTree = "<group>"; };
 		D2A3A3932F7EE4A100FF8E8A /* KSQRCodeCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSQRCodeCreation.m; sourceTree = "<group>"; };
+		D2A3A3952F7F3D2100FF8E8A /* SemanticMarkerAppStore.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SemanticMarkerAppStore.jpeg; sourceTree = "<group>"; };
+		D2A3A3962F7F3D3500FF8E8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -37,8 +39,10 @@
 		D2A3A3922F7EE46500FF8E8A /* AppleApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2A3A3962F7F3D3500FF8E8A /* README.md */,
 				D2A3A3932F7EE4A100FF8E8A /* KSQRCodeCreation.m */,
 				D2A3A3912F7EE45E00FF8E8A /* KSQRCodeCreation.h */,
+				D2A3A3952F7F3D2100FF8E8A /* SemanticMarkerAppStore.jpeg */,
 			);
 			path = AppleApp;
 			sourceTree = "<group>";

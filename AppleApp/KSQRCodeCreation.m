@@ -243,7 +243,7 @@
     //    //NOTE: in future, could probably use just the UUID  ..
     //    NSLog(@"trainiedAddress = %@", trainedAddress);
     //    return trainedAddress;
-}
+}/Users/scott/Documents/GitHub/DynamicQRCodes/WebPages
 
 
 //!if the user want to overwrite, then they can enter a password??
