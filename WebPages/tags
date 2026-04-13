@@ -1,0 +1,12 @@
+checkQRAvatar	index.html	/^function checkQRAvatar(avatarURLId)$/
+checkSMAddress	index.html	/^function checkSMAddress(semanticMarkerURLId)$/
+contactInfo	index.html	/^function contactInfo()$/
+createNewUser	index.html	/^function createNewUser(usernameId, passwordId, tok/
+createSemanticMarkerPath	index.html	/^function createSemanticMarkerPath(commandPath, ava/
+createSemanticMarkerPathId	index.html	/^function createSemanticMarkerPathId(commandPathId,/
+escapeURL	index.html	/^function escapeURL(URL)$/
+existsDynamicQRCode	index.html	/^function existsDynamicQRCode(dynamicFactoryURL_Id,/
+getImage	index.html	/^function getImage(url)$/
+invokeSemanticMarker	index.html	/^function invokeSemanticMarker(smId)$/
+registerDynamicQRCode	index.html	/^function registerDynamicQRCode(isRetrain, dynamicF/
+stripSpaces	index.html	/^function stripSpaces(cmd)$/

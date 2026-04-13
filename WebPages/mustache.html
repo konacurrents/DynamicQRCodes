@@ -1,0 +1,541 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+<title>SemanticMarker&reg;</title>
+
+<link rel="SHORTCUT ICON" href="SemanticMarkerSmall.png" type="image/x-icon" />
+<style>
+/* https://www.w3schools.com/css/css_tooltip.asp */
+.tooltip .tooltiptext {
+  top: -5px;
+  left: 105%;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+</style>
+<style>
+
+   a.demo_img {
+      display: block;
+      width:400px;
+      position:relative;
+      line-height:25px;
+   }
+
+   a.demo_img>div {
+      position:absolute;
+      padding:0;
+      margin:0;
+      zoom:0.25;
+      left: 140px; /* change this value to one that works best for you */
+      top: 100px; /* change this value to one that works best for you */
+      background: transparent url(files/arrow-down-grey.png) left 23px no-repeat;
+      margin-left: 24px;
+      opacity:0;
+      height: 0;
+      overflow: hidden;
+
+      /* Enable transitions */
+      /*-webkit-transition: all .3s ease .15s;
+      -moz-transition: all .3s ease .15s;
+      -o-transition: all .3s ease .15s;
+      -ms-transition: all .3s ease .15s;
+      transition: all .3s ease .15s;*/
+   }
+
+   a.demo_img>div img {
+      padding:8px;
+      margin-left:4px;
+      border:1px solid #BCBDC0;
+      background-color:#BCBDC0;
+      -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+
+      -webkit-box-sizing:border-box;
+         -moz-box-sizing:border-box;
+            box-sizing:border-box;
+   }
+   a.demo_img:hover>div {
+
+      opacity:1;
+      height: 800px;
+      padding: 8px;
+
+      z-index:1;
+   }
+
+</style>
+<style>
+
+/* gradient source: https://uigradients.com/#Wiretap */
+/* decreased transparency to 80% */
+.highlight {
+  //background-image: linear-gradient(to right, #F27121cc, #E94057cc, #8A2387cc);
+  border-radius: 6px;
+  border: 2px solid black;
+  padding: 3px 6px;
+  font-size: 68px;
+}
+
+
+.button {
+  background-color: #33FFFF;
+  color: black;
+  font-size: 18px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.button:hover {
+  background-color: lightblue;
+   font-size: 18px;
+  color: white;
+}
+
+.HELPButton {
+  background-color: lightgreen;
+  color: black;
+  font-size: 18px;
+  border: 2px solid #4CAF50;
+  border-radius:12px;
+
+}
+
+.HELPButton:hover {
+  background-color: green;
+   font-size: 18px;
+  color: white;
+}
+
+.TextWrap {
+ float: left;
+ margin: 10px;
+}
+
+
+/* https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_link_more2 */
+a.ex2:hover, a.ex2:active {font-size: 110%;}
+a.ex3:hover, a.ex3:active {font-size: 120%;}
+
+.sansserif {
+  /*font-family: Arial, Helvetica, sans-serif; */
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+
+.collapsible {
+  background-color: black; /*#777;*/
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 65%;
+  border: none;
+  text-align: left;
+  outline-style: solid;
+  outline-color: white;
+  font-size: 15px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/* when done, and is not collapsed, keep black */
+.active:hover {
+  background-color: black;
+}
+/* hover as a grey */
+.collapsible:hover {
+  background-color: #555;
+}
+
+/* Plus/Minus label */
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+/* Plus/Minus label */
+.active:after {
+  content: "\2212";
+}
+
+/* the content off white */
+.content {
+  padding: 0 10px; /*was 18*/
+  max-height: 0;
+  width: 60%;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color:#f1f1f1;
+}
+
+
+
+/* https://www.w3schools.com/css/css_link.asp */
+/* unvisited link */
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: blue;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+.psmall  {
+  font-size:12px;
+}
+
+</style>
+
+
+<script src="https://SemanticMarker.org/SemanticMarker.js?v=1"></script>
+<script>
+//!create a semantic marker, and place at the idSM location
+function createSemanticMarkerPath(commandPath, avatarURL, idSM, idLabel, argCircularValueId)
+{
+   //var circular = document.getElementById('boolArgValueCircular').value=="on";
+   var circular = document.getElementById(argCircularValueId).value=="on";
+
+   //avatar URL
+   //var url = document.getElementById(idSemanticMarkerImageURL).value;
+
+   //no avatarURL so use iDogWatch
+   if (!avatarURL || avatarURL.length==0)
+   {
+      window.alert("A custom QRAvatarURL is needed to physically distinguish among your new Semantic Marker\u2122 collection");
+      return;
+     //hard wire for now..
+     //avatarURL = "https://idogwatch.com/pettutor/iDogWatch.png";
+   }
+
+   //empty the id first..
+   var previousSM = document.getElementById(idSM);
+   //Seems that the call is adding a new SM instead of cleaning it up..
+   document.getElementById(idSM).value = "";
+   //document.getElementById(idSM).html = "<p>x</p>";
+   document.getElementById(idSM).html = "<p >x</p>";
+
+   document.getElementById(idSM).innerHTML = "";
+
+   console.log(idSM);
+   console.log(document.getElementById(idSM));
+
+   //! fix bug: https://itecnote.com/tecnote/javascript-qrcode-js-error-code-length-overflow-17161056/
+   if (commandPath.length >= 192 && commandPath.length <= 220)
+   {
+      commandPath = commandPath + "&filler=";
+
+      // pad to greater thatn 220
+      var len = commandPath.length;
+      while (commandPath.length <= 220)
+      {
+         commandPath= commandPath + "x";
+      }
+   }
+
+   try
+   {
+      getImage(avatarURL).then
+      (
+         function (successurl)
+         {
+
+            var sm = new SemanticMarker(document.getElementById(idSM),
+               commandPath,
+               avatarURL,
+               circular);
+         }).catch (function (errorurl)
+         {
+
+            alert("Issue creating Avatar in Semantic Marker&reg; creation: \n" + errorurl + "\nPlease file bug report");
+         })
+
+   }
+
+catch (error)
+   {
+
+      alert("Issue with Semantic Marker&reg; creation: \n" + error.message + "\nPlease file bug report");
+   }
+
+
+   //innerHTMl needed .. since a <p>
+   document.getElementById(idLabel).innerHTML = commandPath;
+
+
+}
+
+//!create a semantic marker, and place at the idSM location
+function createSemanticMarkerPathId(commandPathId, urlId ,idSM, idLabel, argCircularValueId)
+{
+   if (!checkSMAddress(commandPathId))
+      return;
+
+   var commandPath = document.getElementById(commandPathId).value;
+
+   // check the QRAvatar for null, or provide a default.
+   if (!checkQRAvatar(urlId))
+      return;
+
+   var url = document.getElementById(urlId).value;
+   if (!url || url.length==0)
+   {
+      //url = "https://SemanticMarker.org/images/SM-Circle-R.png";
+      window.alert("A custom AvatarURL is needed to physically distinguish your new Semantic Marker&reg; collection");
+      return;
+   }
+   createSemanticMarkerPath(commandPath, url ,idSM, idLabel, argCircularValueId);
+}
+
+// a few to pick from
+var _QRAvatarArray = [ "https://idogwatch.com/pettutor/iDogWatch.png",
+                       "https://KnowledgeShark.me/images/snowLabyrinth.png",
+                       "https://KnowledgeShark.me/images/labyrinthICON.jpeg",
+                       "https://KnowledgeShark.me/images/labyrinthMT.png",
+                       "https://KnowledgeShark.me/images/LacieICON.jpg",
+                       "https://KnowledgeShark.me/images/MaggieICON.png",
+                       "https://KnowledgeShark.me/images/balloonLabyrinth.jpg",
+                       "https://KnowledgeShark.me/images/HowieICON.png",
+                       "https://KnowledgeShark.me/images/DukeICON.png",
+                       "https://KnowledgeShark.me/images/ScoobyICON.png" ];
+
+//! returns TRUE if valid (or a default), false otherwise
+function checkQRAvatar(avatarURLId)
+{
+	var whichQRindex = Math.floor(Math.random() * _QRAvatarArray.length);
+	//var defaultURL = "https://idogwatch.com/pettutor/iDogWatch.png";
+	var defaultURL = _QRAvatarArray[whichQRindex];
+	var avatarURL = document.getElementById(avatarURLId).value;
+
+	//no avatarURL so use iDogWatch
+   if (!avatarURL || avatarURL.length==0)
+	{
+		if (window.confirm("A custom AvatarURL is needed to physically \ndistinguish among your new Semantic Marker\u2122 collection \n\nWould you like a random Avatar? \n\n(Reset) to try another random Avatar \n\nChange the Avatar Image Kind between Circular and Square as well"))
+		{
+		  document.getElementById(avatarURLId).value = defaultURL;
+		  return true;
+		}
+		else
+		{
+		  return false;
+	   }
+	}
+	return true;
+}
+
+//! returns TRUE if valid (or a default), false otherwise
+function checkSMAddress(semanticMarkerURLId)
+{
+	var defaultURL = "https://SemanticMarker.org";
+	var semanticMarkerURL = document.getElementById(semanticMarkerURLId).value;
+
+	//no avatarURL so use iDogWatch
+        if (!semanticMarkerURL || semanticMarkerURL.length==0)
+	{
+		if (window.confirm("A Semantic Marker address is needed\nWould you like a default Semantic Marker to get an idea on how it works?"))
+		{
+		  document.getElementById(semanticMarkerURLId).value = defaultURL;
+		  return true;
+		}
+		else
+		{
+		  return false;
+	   }
+	}
+	return true;
+}
+
+//! grab the QRAvatar first..
+//! http://www.javascriptkit.com/javatutors/javascriptpromises.shtml
+function getImage(url)
+{
+    console.log("getImage(" + url + ")");
+    return new Promise(function(resolve, reject)
+    {
+        var img = new Image()
+        img.onload = function()
+        {
+            console.log("image.onload");
+            resolve(url)
+        }
+        img.onerror = function()
+        {
+            reject(url)
+        }
+        img.src = url
+    })
+}
+
+window.onload = function()
+{
+  createSemanticMarkerPathId('_dynamic_semanticMarkerURL','_imageURL','_finalSemanticMarkerImage','semanticMarkerURLId','_boolArgValueCircular');
+
+}
+</script>
+
+
+<html>
+    <head>
+        <title>SemanticMarkers.org Lookup</title>
+    </head>
+    <body>
+        <h1>SemanicMarker key</h1>
+        <ul>
+            <li>Category = {{category}}</li>
+            <li>Name = {{name}}</li>
+            <li>UUID = {{uuid}}</li>
+             <li>date = {{jsonformat.date}}</li>
+            <li>mapping = {{jsonformat.mapping}}</li>
+            <li>imageURL = {{jsonformat.imageURL}}</li>
+            <li>qrcode= {{jsonformat.qrcode}}</li>
+
+            <li>ownerIP = {{jsonformat.ownerIP}}</li>
+         </ul>
+
+<h1>
+<label class="label">SMART Semantic Marker&reg; Address
+</h1>
+<br>
+<br>
+<!-- where QRcode image goes ... -->
+<p style="margin-left:100px; margin-right:50px;" id="_finalSemanticMarkerImage"></p>
+
+<br>
+<!--   Original URL for the DYnamic QR to go to .. -->
+<div class="tooltip">
+   <input type="button" class="HELPButton" id="HELPButton" value="info" 
+	onClick="alert('SMART - Semantic Marker&reg; Augmented Reality of Things to run your IoT Devices')" />
+   <span class="tooltiptext">
+SMART - Semantic Marker&reg; Augmented Reality of Things to run your IoT Devices
+   </span>
+</div>
+<label class="label">URL of Final Landing Place {{jsonformat.mapping}}
+
+</label>
+
+<br>
+
+<!--   QRAvatar URL for the DYnamic QR to go to .. -->
+<div class="tooltip">
+   <input type="button" class="HELPButton" id="HELPButton" value="info" 
+	onClick="alert('URL for your QRAvatar')" />
+   <span class="tooltiptext">
+URL for your QRAvatar
+   </span>
+</div>
+<label class="label">URL of QRAvatar Image
+<input name="_imageURL" id="_imageURL" size="84" type="text" value={{jsonformat.imageURL}}>
+<br>
+
+<!--   QRAvatar circle or square -->
+<div class="tooltip">
+<input type="button" class="HELPButton" id="HELPButton" value="info" onClick="alert('Avatar URL customizes your Semantic Marker&reg; \nhelping you distinguish between your future collection')" />
+   <span class="tooltiptext">Avatar URL customizes your Semantic Marker</span>
+</div>
+
+<label class="label" for="_boolArgValueCircular">Photo Avatar Image Kind:</label>
+<select class="select label"  name="_boolArgValueCircular" id="_boolArgValueCircular">
+  <option value="on">Circular</option>
+  <option value="off">Square</option>
+</select>
+<br>
+
+
+<!--  Final URL Address -->
+<div class="tooltip">
+   <input type="button" class="HELPButton" id="HELPButton" value="info" 
+	onClick="alert('SMART - Semantic Marker&reg; Augmented Reality of Things to run your IoT Devices')" />
+   <span class="tooltiptext">
+SMART - Semantic Marker&reg; Augmented Reality of Things to run your IoT Devices
+   </span>
+</div>
+<div class="tooltip">
+   <input type="button" class="HELPButton" id="HELPButton" value="copy" 
+	onClick="alert('SMART - Semantic Marker&reg; Augmented Reality of Things to run your IoT Devices')" />
+   <span class="tooltiptext">
+SMART - Semantic Marker&reg; Augmented Reality of Things to run your IoT Devices
+   </span>
+</div>
+<div class="tooltip">
+   <input type="button" class="HELPButton" id="HELPButton" value="lookup" 
+	onClick="var runURL = document.getElementById('_dynamic_semanticMarkerURL').value; runURL = runURL.replace('/qr','/lookup/qr'); window.open(runURL,'_blank')" />
+   <span class="tooltiptext">
+SMART - Semantic Marker&reg; Augmented Reality of Things to run your IoT Devices
+   </span>
+</div>
+<div class="tooltip">
+   <input type="button" class="HELPButton" id="HELPButton" value="run" 
+	onClick="window.open(document.getElementById('_dynamic_semanticMarkerURL').value)" />
+   <span class="tooltiptext">
+SMART - Semantic Marker&reg; Augmented Reality of Things to run your IoT Devices
+   </span>
+</div>
+<label class="label">SMART Semantic Marker&reg; Address
+</label>
+<input name="_dynamic_semanticMarkerURL" id="_dynamic_semanticMarkerURL" size="84" readonly type="text"
+value="{{jsonformat.qrcode}}">
+
+<br>
+<input type="button" class="button" id="createSMAny" value="Create Semantic Marker&reg;" 
+onClick="createSemanticMarkerPathId('_dynamic_semanticMarkerURL','_imageURL','_finalSemanticMarkerImage','semanticMarkerURLId','_boolArgValueCircular')" />
+<br><br>
+
+</div>
+<br>
+</html>
