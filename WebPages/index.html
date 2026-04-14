@@ -4,7 +4,7 @@
   <head>
 <title>SemanticMarker&reg;</title>
 
-<link rel="SHORTCUT ICON" href="SemanticMarkerSmall.png" type="image/x-icon" />
+<link rel="SHORTCUT ICON" href="https://SemanticMarker.org/SemanticMarkerSmall.png" type="image/x-icon" />
 <style>
 /* https://www.w3schools.com/css/css_tooltip.asp */
 .tooltip .tooltiptext {
@@ -656,6 +656,8 @@ function registerDynamicQRCode(isRetrain, dynamicFactoryURL_Id, categoryId, name
 //! 4.12.26 create a new user 
 function createNewUser(usernameId, passwordId, tokenId)
 {
+alert("createNewUser .. not implemented yet");
+return;
    
 	 var username = document.getElementById(usernameId).value;
 	 username = stripSpaces(username);
@@ -719,7 +721,7 @@ function createNewUser(usernameId, passwordId, tokenId)
 </div>
 <label class="label">Dynamic QRCode Factory URL
 </label>
-<input name="_DynamicQRCodeFactoryURL" id="_DynamicQRCodeFactoryURL" size="84" value="http://localhost:1880" readonly type="text">
+<input name="_DynamicQRCodeFactoryURL" id="_DynamicQRCodeFactoryURL" size="84" value={{jsonformat.hostnameURL}} readonly type="text">
 
 
 <br>
